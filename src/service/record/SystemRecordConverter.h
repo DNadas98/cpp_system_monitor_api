@@ -1,4 +1,4 @@
-#include "../../model/system_record/SystemRecord.h"
+#include "../../model/record/SystemRecord.h"
 #include "../../includes/crow_all.h"
 
 class SystemRecordConverter {

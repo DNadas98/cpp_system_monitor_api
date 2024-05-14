@@ -18,5 +18,8 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(cpp_dotenv)
 
-add_executable(crow_api src/main.cpp)
+add_executable(crow_api
+  src/main.cpp
+  src/service/data_reader/SystemDataReader.cpp
+)
 target_link_libraries(crow_api cpp_dotenv PkgConfig::PQXX PkgConfig::PQ)

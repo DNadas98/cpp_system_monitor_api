@@ -2,8 +2,8 @@
 #include "includes/crow_all.h"
 #include "dotenv.h"
 #include "model/DatabaseConnector.h"
-#include "service/system_record/SystemRecordService.h"
-#include "service/system_record/SystemRecordConverter.h"
+#include "service/record/SystemRecordService.h"
+#include "service/record/SystemRecordConverter.h"
 
 int getPort();
 
