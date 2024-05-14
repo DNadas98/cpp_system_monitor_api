@@ -2,7 +2,7 @@ FROM gcc:latest as build
 
 # Dependencies
 RUN apt-get update && apt-get install -y \
-    git cmake libboost-dev libboost-regex-dev libasio-dev
+    cmake libboost-dev libboost-regex-dev libasio-dev libpqxx-dev pkg-config
 
 # Copy project files
 WORKDIR /app

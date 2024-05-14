@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "5c4a1380-60d2-465c-ab02-17e5193f1f72",
+		"name": "crow_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30693601"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "Server",
+							"value": "Crow/1.1.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 May 2024 18:41:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						}
+					],
+					"cookie": [],
+					"body": "Hello world!"
+				}
+			]
+		},
+		{
+			"name": "/records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"records"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/records",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/records",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"records"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "214"
+						},
+						{
+							"key": "Server",
+							"value": "Crow/1.1.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 May 2024 18:41:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"timestamp\": \"2024-05-14 17:40:23\",\n        \"network_out\": 256,\n        \"used_disk_space\": 8744,\n        \"network_in\": 966,\n        \"total_disk_space\": 9015,\n        \"disk_usage\": 97,\n        \"used_memory\": 9361,\n        \"total_memory\": 11417,\n        \"memory_usage\": 82,\n        \"cpu_usage\": 95\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/records/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/records/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"records",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/records/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/records/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"records",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						},
+						{
+							"key": "Server",
+							"value": "Crow/1.1.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 May 2024 18:41:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2024-05-14 17:40:23\",\n    \"network_out\": 256,\n    \"used_disk_space\": 8744,\n    \"network_in\": 966,\n    \"total_disk_space\": 9015,\n    \"disk_usage\": 97,\n    \"used_memory\": 9361,\n    \"total_memory\": 11417,\n    \"memory_usage\": 82,\n    \"cpu_usage\": 95\n}"
+				},
+				{
+					"name": "/records/2 not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/records/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"records",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "Server",
+							"value": "Crow/1.1.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 May 2024 18:42:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						}
+					],
+					"cookie": [],
+					"body": "Record not found"
+				}
+			]
+		},
+		{
+			"name": "/records",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"records"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/records",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/records",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"records"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "Server",
+							"value": "Crow/1.1.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 May 2024 17:55:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						}
+					],
+					"cookie": [],
+					"body": "Record created"
+				}
+			]
+		},
+		{
+			"name": "/records",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/records",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"records"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/records",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/records",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"records"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "Server",
+							"value": "Crow/1.1.0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 14 May 2024 18:43:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						}
+					],
+					"cookie": [],
+					"body": "All records deleted"
+				}
+			]
+		},
+		{
+			"name": "/records/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/records/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"records",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
