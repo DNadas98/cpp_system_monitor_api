@@ -1,0 +1,9 @@
+Package: crow-api
+Version: 0.0.1
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: libc6, libpqxx-dev
+Maintainer: Dániel Nádas <daniel.nadas@dnadas.net>
+Description: System Monitoring API
+ A simple API using Crow framework to provide system monitoring records.

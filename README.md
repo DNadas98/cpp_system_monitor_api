@@ -94,6 +94,52 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 #### Manual setup
 
+##### Database with Docker Compose
+
+- Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
+  template)
+- Run `docker compose -f docker-compose-dev.yml up -d` in the project root
+
+##### Database without Docker Compose 
+- Download PostgreSQL
+  ```bash
+  sudo apt-get install -y postgresql
+  ```
+- Create the database
+  ```bash
+  sudo -u postgres psql
+  CREATE DATABASE <DB_NAME>;
+  CREATE USER <DB_USER> WITH PASSWORD '<DB_PASSWORD>';
+  GRANT ALL PRIVILEGES ON DATABASE <DB_NAME> TO <DB_USER>;
+  ```
+- Run `db/init.sql` in the database
+  ```bash
+  psql -U <DB_USER> -d <DB_NAME> -a -f ./db/init.sql
+  ```
+
+##### API with `.deb` package
+
+- Install the package
+  ```bash
+  sudo dpkg -i crow_api.deb
+  sudo apt-get install -f
+  ```
+- Export the environment variables
+  ```bash
+  export APP_PORT=<APP_PORT>
+  export DB_HOST=<DB_HOST>
+  export DB_PORT=<DB_PORT>
+  export DB_USER=<DB_USER>
+  export DB_PASSWORD=<DB_PASSWORD>
+  export DB_NAME=<DB_NAME>
+  ```
+- Run the project
+  ```bash
+  /usr/local/bin/start_crow_api.sh
+  ```
+
+###### API with CMake
+
 - Download `gcc`
   ```bash
   sudo apt-get update
@@ -107,23 +153,6 @@ This is a learning project, a simple API built to experiment with the C++ langua
   ```bash
   sudo apt-get install -y pkg-config
   ```
-- Download PostgreSQL (if not using Docker Compose)
-  ```bash
-  sudo apt-get install -y postgresql
-  ```
-- Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
-  template)
-- Create the database
-  ```bash
-  sudo -u postgres psql
-  CREATE DATABASE <DB_NAME>;
-  CREATE USER <DB_USER> WITH PASSWORD '<DB_PASSWORD>';
-  GRANT ALL PRIVILEGES ON DATABASE <DB_NAME> TO <DB_USER>;
-  ```
-- Run `db/init.sql` in the database
-  ```bash
-  psql -U <DB_USER> -d <DB_NAME> -a -f ./db/init.sql
-  ```
 - Build the project with CMake
   ```bash
   mkdir build
@@ -131,6 +160,7 @@ This is a learning project, a simple API built to experiment with the C++ langua
   cmake ..
   make
   ```
+- Export the environment variables  
 - Run the project
   ```bash
   ./crow_api

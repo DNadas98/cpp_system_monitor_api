@@ -1,7 +1,6 @@
 #include <cstdlib>
 #include <utility>
 #include "crow.h"
-#include "dotenv.h"
 #include "model/DatabaseConnector.h"
 #include "service/record/SystemRecordService.h"
 #include "service/record/SystemRecordConverter.h"
@@ -11,8 +10,6 @@ int getPort();
 std::string getDBConnectionString();
 
 int main() {
-  dotenv::env.load_dotenv("../.env.dev", true /* silent */, true /* overwrite */);
-
   crow::logger::setLogLevel(crow::LogLevel::DEBUG);
   crow::SimpleApp app;
   int PORT = getPort();
@@ -83,20 +80,17 @@ int main() {
 }
 
 int getPort() {
-  std::string portStr = dotenv::env["PORT"];
-  if (portStr.empty()) {
-    char* portEnv = std::getenv("PORT");
-    portStr = portEnv ? portEnv : "8080";
-  }
+  const char* portEnv = std::getenv("PORT");
+  std::string portStr = portEnv ? portEnv : "8080";
   return std::stoi(portStr);
 }
 
 std::string getDBConnectionString() {
-  std::string db_host = dotenv::env["DB_HOST"].empty() ? (std::getenv("DB_HOST") ? std::getenv("DB_HOST") : "localhost") : dotenv::env["DB_HOST"];
-  std::string db_port = dotenv::env["DB_PORT"].empty() ? (std::getenv("DB_PORT") ? std::getenv("DB_PORT") : "5432") : dotenv::env["DB_PORT"];
-  std::string db_user = dotenv::env["DB_USER"].empty() ? (std::getenv("DB_USER") ? std::getenv("DB_USER") : "user") : dotenv::env["DB_USER"];
-  std::string db_password = dotenv::env["DB_PASSWORD"].empty() ? (std::getenv("DB_PASSWORD") ? std::getenv("DB_PASSWORD") : "password") : dotenv::env["DB_PASSWORD"];
-  std::string db_name = dotenv::env["DB_NAME"].empty() ? (std::getenv("DB_NAME") ? std::getenv("DB_NAME") : "database") : dotenv::env["DB_NAME"];
+  std::string db_host = std::getenv("DB_HOST") ? std::getenv("DB_HOST") : "localhost";
+  std::string db_port = std::getenv("DB_PORT") ? std::getenv("DB_PORT") : "54321";
+  std::string db_user = std::getenv("DB_USER") ? std::getenv("DB_USER") : "devuser";
+  std::string db_password = std::getenv("DB_PASSWORD") ? std::getenv("DB_PASSWORD") : "devpw";
+  std::string db_name = std::getenv("DB_NAME") ? std::getenv("DB_NAME") : "crowapidb";
 
   return "host=" + db_host +
          " port=" + db_port +

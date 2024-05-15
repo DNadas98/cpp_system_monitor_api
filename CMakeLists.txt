@@ -5,13 +5,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 include(FetchContent)
 
-# Fetch cpp-dotenv
-FetchContent_Declare(
-  cpp_dotenv
-  GIT_REPOSITORY https://github.com/adeharo9/cpp-dotenv.git
-  GIT_TAG        master
-)
-
 # Fetch Asio
 FetchContent_Declare(
   asio
@@ -19,7 +12,7 @@ FetchContent_Declare(
   GIT_TAG        asio-1-18-2
 )
 
-FetchContent_MakeAvailable(cpp_dotenv asio)
+FetchContent_MakeAvailable(asio)
 
 # Set the ASIO_INCLUDE_DIR to the path where FetchContent has placed Asio
 set(ASIO_INCLUDE_DIR ${asio_SOURCE_DIR}/asio/include)
@@ -44,9 +37,12 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(crow libpqxx)
 
 # Add executable
-add_executable(crow_api
-  src/main.cpp
-)
+add_executable(crow_api src/main.cpp)
 
 # Link libraries
-target_link_libraries(crow_api cpp_dotenv Crow::Crow pqxx)
+target_link_libraries(crow_api Crow::Crow pqxx)
+
+# Installation step (if needed)
+install(TARGETS crow_api DESTINATION crow_api/usr/local/bin)
+install(FILES ${CMAKE_SOURCE_DIR}/.env DESTINATION crow_api/usr/local/bin)
+install(FILES ${CMAKE_SOURCE_DIR}/load_env.sh DESTINATION crow_api/usr/local/bin)
