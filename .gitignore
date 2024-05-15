@@ -1,3 +1,7 @@
 *.env*
 .idea
 cmake-*
+crow_api/usr/local/bin/crow_api
+*.deb
+*.tar.gz
+*.zip

@@ -97,9 +97,14 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 #### Manual setup
 
+##### Database with Docker Compose
+
 - Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
   template)
-- Download PostgreSQL (if not using Docker Compose)
+- Run `docker compose -f docker-compose-dev.yml up -d` in the project root
+
+##### Database without Docker Compose 
+- Download PostgreSQL
   ```bash
   sudo apt-get install -y postgresql
   ```
@@ -114,7 +119,24 @@ This is a learning project, a simple API built to experiment with the C++ langua
   ```bash
   psql -U <DB_USER> -d <DB_NAME> -a -f ./db/init.sql
   ```
-- Download and run the executable of the latest release, or:
+
+##### API with `.deb` package
+
+- Install the package
+  ```bash
+  sudo dpkg -i crow_api.deb
+  sudo apt-get install -f
+  ```
+- Source the environment variables
+  ```bash
+   source exportEnv.sh 
+  ```
+- Run the project
+  ```bash
+  /usr/local/bin/start_crow_api.sh
+  ```
+
+###### API with CMake
 
 - Download `gcc`
   ```bash
@@ -135,6 +157,10 @@ This is a learning project, a simple API built to experiment with the C++ langua
   cd build
   cmake ..
   make
+  ```
+- Source the environment variables
+  ```bash
+   source exportEnv.sh 
   ```
 - Run the project
   ```bash
