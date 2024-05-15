@@ -1,4 +1,7 @@
 <p align="center">
+  <a href="https://github.com/DNadas98/crow_api/releases/tag/v0.0.1">
+    <img src="https://img.shields.io/github/v/release/DNadas98/crow_api.svg?style=for-the-badge" alt="Releases">
+  </a>
   <a href="https://github.com/DNadas98/crow_api/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/DNadas98/crow_api.svg?style=for-the-badge" alt="Contributors">
   </a>
@@ -75,10 +78,11 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 #### Manual setup
 
+- postgresql (e.g. [PostgreSQL](https://www.postgresql.org/)) (or run the docker-compose-dev.yml file)
+- Executable from the latest release, or:
 - C++ compiler (e.g. [GCC](https://gcc.gnu.org/))
 - [CMake](https://cmake.org/)
 - [libpq-dev](https://www.postgresql.org/docs/9.3/libpq.html)
-- postgresql (e.g. [PostgreSQL](https://www.postgresql.org/)) (or run the docker-compose-dev.yml file)
 - [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)
 
 ### Setup & Run
@@ -94,6 +98,25 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 #### Manual setup
 
+- Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
+  template)
+- Download PostgreSQL (if not using Docker Compose)
+  ```bash
+  sudo apt-get install -y postgresql
+  ```
+- Create the database
+  ```bash
+  sudo -u postgres psql
+  CREATE DATABASE <DB_NAME>;
+  CREATE USER <DB_USER> WITH PASSWORD '<DB_PASSWORD>';
+  GRANT ALL PRIVILEGES ON DATABASE <DB_NAME> TO <DB_USER>;
+  ```
+- Run `db/init.sql` in the database
+  ```bash
+  psql -U <DB_USER> -d <DB_NAME> -a -f ./db/init.sql
+  ```
+- Download and run the executable of the latest release, or:
+
 - Download `gcc`
   ```bash
   sudo apt-get update
@@ -106,23 +129,6 @@ This is a learning project, a simple API built to experiment with the C++ langua
 - Download `pkg-config`
   ```bash
   sudo apt-get install -y pkg-config
-  ```
-- Download PostgreSQL (if not using Docker Compose)
-  ```bash
-  sudo apt-get install -y postgresql
-  ```
-- Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
-  template)
-- Create the database
-  ```bash
-  sudo -u postgres psql
-  CREATE DATABASE <DB_NAME>;
-  CREATE USER <DB_USER> WITH PASSWORD '<DB_PASSWORD>';
-  GRANT ALL PRIVILEGES ON DATABASE <DB_NAME> TO <DB_USER>;
-  ```
-- Run `db/init.sql` in the database
-  ```bash
-  psql -U <DB_USER> -d <DB_NAME> -a -f ./db/init.sql
   ```
 - Build the project with CMake
   ```bash
