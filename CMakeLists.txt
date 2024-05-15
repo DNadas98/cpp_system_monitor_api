@@ -37,7 +37,16 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(crow libpqxx)
 
 # Add executable
-add_executable(crow_api src/main.cpp)
+add_executable(crow_api
+  src/main.cpp
+  src/model/DatabaseConnector.cpp
+  src/model/record/SystemRecord.cpp
+  src/model/record/SystemRecordRepository.cpp
+  src/service/record/SystemRecordService.cpp
+  src/service/record/SystemRecordConverter.cpp
+  src/service/data_reader/SystemDataReader.cpp
+  src/service/data_reader/LinuxSystemDataReader.cpp
+)
 
 # Link libraries
 target_link_libraries(crow_api Crow::Crow pqxx)
