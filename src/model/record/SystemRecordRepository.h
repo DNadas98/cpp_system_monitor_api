@@ -17,7 +17,7 @@ public:
       std::vector<SystemRecord> records;
       auto conn = dbConnector->getConnection();
       pqxx::work txn(*conn);
-      pqxx::result r = txn.exec("SELECT * FROM system_record");
+      pqxx::result r = txn.exec("SELECT * FROM system_record ORDER BY timestamp DESC");
       if (r.empty()){
         return {};
       }

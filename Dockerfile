@@ -2,7 +2,10 @@ FROM gcc:latest as build
 
 # Dependencies
 RUN apt-get update && apt-get install -y \
-    cmake libboost-dev libboost-regex-dev libasio-dev libpqxx-dev pkg-config
+    cmake \
+    libpq-dev \
+    pkg-config \
+    git
 
 # Copy project files
 WORKDIR /app

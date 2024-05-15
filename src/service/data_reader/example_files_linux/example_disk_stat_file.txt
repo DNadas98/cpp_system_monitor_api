@@ -1,0 +1,3 @@
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           2,0G  2,3M  2,0G   1% /run
+...
