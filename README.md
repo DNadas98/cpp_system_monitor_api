@@ -1,4 +1,7 @@
 <p align="center">
+  <a href="https://github.com/DNadas98/crow_api/releases/tag/v0.0.1">
+    <img src="https://img.shields.io/github/v/release/DNadas98/crow_api.svg?style=for-the-badge" alt="Releases">
+  </a>
   <a href="https://github.com/DNadas98/crow_api/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/DNadas98/crow_api.svg?style=for-the-badge" alt="Contributors">
   </a>
@@ -38,7 +41,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#deployment">Deployment</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#setup--run">Setup and run</a></li>
       </ul>
@@ -55,7 +57,7 @@
 
 ## About The Project
 
-This is a learning project, a simple API built to experiment with the C++ language libpqxx database connector.
+This is a learning project, a simple API built to experiment with the C++ language, PSQL database connection and system monitoring.
 
 ## Tech Stack
 
@@ -75,10 +77,11 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 #### Manual setup
 
+- postgresql (e.g. [PostgreSQL](https://www.postgresql.org/)) (or run the docker-compose-dev.yml file)
+- Executable from the latest release, or:
 - C++ compiler (e.g. [GCC](https://gcc.gnu.org/))
 - [CMake](https://cmake.org/)
 - [libpq-dev](https://www.postgresql.org/docs/9.3/libpq.html)
-- postgresql (e.g. [PostgreSQL](https://www.postgresql.org/)) (or run the docker-compose-dev.yml file)
 - [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)
 
 ### Setup & Run
@@ -124,14 +127,9 @@ This is a learning project, a simple API built to experiment with the C++ langua
   sudo dpkg -i crow_api.deb
   sudo apt-get install -f
   ```
-- Export the environment variables
+- Source the environment variables
   ```bash
-  export APP_PORT=<APP_PORT>
-  export DB_HOST=<DB_HOST>
-  export DB_PORT=<DB_PORT>
-  export DB_USER=<DB_USER>
-  export DB_PASSWORD=<DB_PASSWORD>
-  export DB_NAME=<DB_NAME>
+   source exportEnv.sh 
   ```
 - Run the project
   ```bash
@@ -160,13 +158,42 @@ This is a learning project, a simple API built to experiment with the C++ langua
   cmake ..
   make
   ```
-- Export the environment variables  
+- Source the environment variables
+  ```bash
+   source exportEnv.sh 
+  ```
 - Run the project
   ```bash
   ./crow_api
   ```
 
 ## Usage
+
+To use the API, import the provided `crow_api.postman_collection.json` to Postman.
+Current endpoints:
+- GET `/` - Simple hello world message
+- GET `/records` - Get all saved system monitoring records
+- GET `/records/<id>` - Get system monitoring record by ID
+- POST `/records` - Create a new system monitoring record
+- DELETE `/records/<id>` - Delete system monitoring record by ID
+- DELETE `/records` - Delete all system monitoring records
+
+Example system monitoring record:
+  ```json
+  {
+      "timestamp_UTC": "2024-05-15 11:15:00",
+      "total_disk_space_MB": 206972,
+      "disk_usage_percentage": 47,
+      "used_memory_MB": 7740,
+      "total_memory_MB": 19770,
+      "network_out_KB": 877972,
+      "network_in_KB": 2676829,
+      "memory_usage_percentage": 39,
+      "cpu_usage_percentage": 18,
+      "used_disk_space_MB": 97276,
+      "id": 28
+  }
+  ```
 
 ## Roadmap
 
