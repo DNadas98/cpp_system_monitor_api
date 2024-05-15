@@ -1,5 +1,5 @@
 #include "../../model/record/SystemRecord.h"
-#include "../../includes/crow_all.h"
+#include "crow.h"
 
 class SystemRecordConverter {
 public:

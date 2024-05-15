@@ -16,7 +16,7 @@
     <img src="https://avatars.githubusercontent.com/u/125133206?v=4" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">C++ API</h3>
+<h3 align="center">C++ System Monitoring API</h3>
   <p align="center">
     Created by <a href="https://github.com/DNadas98">DNadas98 (Dániel Nádas)</a>
     <br />
@@ -69,9 +69,21 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 ### Prerequisites
 
-- [Docker](https://www.docker.com/) for the Docker Compose setup
+#### Docker Compose
+
+- [Docker](https://www.docker.com/)
+
+#### Manual setup
+
+- C++ compiler (e.g. [GCC](https://gcc.gnu.org/))
+- [CMake](https://cmake.org/)
+- [libpq-dev](https://www.postgresql.org/docs/9.3/libpq.html)
+- postgresql (e.g. [PostgreSQL](https://www.postgresql.org/)) (or run the docker-compose-dev.yml file)
+- [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config/)
 
 ### Setup & Run
+
+#### Docker Compose
 
 - Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
   template)
@@ -79,6 +91,50 @@ This is a learning project, a simple API built to experiment with the C++ langua
   - Access the application at [`http://localhost:8080`](http://localhost:8080) (by default)
     <br><br>
 - Run `docker compose logs -f` in the project root to view the logs
+
+#### Manual setup
+
+- Download `gcc`
+  ```bash
+  sudo apt-get update
+  sudo apt-get install -y gcc
+  ```
+- Download `libpq-dev`
+  ```bash
+  sudo apt-get install -y libpq-dev
+  ```
+- Download `pkg-config`
+  ```bash
+  sudo apt-get install -y pkg-config
+  ```
+- Download PostgreSQL (if not using Docker Compose)
+  ```bash
+  sudo apt-get install -y postgresql
+  ```
+- Copy `env.txt` template and rename to `.env` and `.env.dev`, modify values (see details in the
+  template)
+- Create the database
+  ```bash
+  sudo -u postgres psql
+  CREATE DATABASE <DB_NAME>;
+  CREATE USER <DB_USER> WITH PASSWORD '<DB_PASSWORD>';
+  GRANT ALL PRIVILEGES ON DATABASE <DB_NAME> TO <DB_USER>;
+  ```
+- Run `db/init.sql` in the database
+  ```bash
+  psql -U <DB_USER> -d <DB_NAME> -a -f ./db/init.sql
+  ```
+- Build the project with CMake
+  ```bash
+  mkdir build
+  cd build
+  cmake ..
+  make
+  ```
+- Run the project
+  ```bash
+  ./crow_api
+  ```
 
 ## Usage
 

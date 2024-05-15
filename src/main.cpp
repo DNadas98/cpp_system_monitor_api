@@ -1,5 +1,6 @@
 #include <cstdlib>
-#include "includes/crow_all.h"
+#include <utility>
+#include "crow.h"
 #include "dotenv.h"
 #include "model/DatabaseConnector.h"
 #include "service/record/SystemRecordService.h"
@@ -9,7 +10,7 @@ int getPort();
 
 std::string getDBConnectionString();
 
-int main(void) {
+int main() {
   dotenv::env.load_dotenv("../.env.dev", true /* silent */, true /* overwrite */);
 
   crow::logger::setLogLevel(crow::LogLevel::DEBUG);

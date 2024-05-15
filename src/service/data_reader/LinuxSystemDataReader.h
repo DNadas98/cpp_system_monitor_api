@@ -2,7 +2,7 @@
 #define LINUX_SYSTEM_DATA_READER_H
 
 #include "SystemDataReader.h"
-#include "crow_all.h"
+#include "crow.h"
 #include <fstream>
 #include <sstream>
 #include <string>
