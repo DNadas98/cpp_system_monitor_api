@@ -65,7 +65,8 @@ This is a learning project, a simple API built to experiment with the C++ langua
 [![CrowCpp](https://img.shields.io/badge/-CrowCpp-CCCCCC?style=for-the-badge)](https://crowcpp.org/master/)
 [![LibPQXX](https://img.shields.io/badge/-LibPQXX-CCCCCC?style=for-the-badge)](https://pqxx.org/libpqxx/)  
 [![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=black)](https://www.postgresql.org/)  
-[![Docker](https://img.shields.io/badge/-Docker-1d63ed?style=for-the-badge&logo=docker&logoColor=black)](https://www.docker.com/)
+[![Docker](https://img.shields.io/badge/-Docker-1d63ed?style=for-the-badge&logo=docker&logoColor=black)](https://www.docker.com/)  
+[![Bash Script](https://img.shields.io/badge/-BASH_SCRIPT-CCCCCC?style=for-the-badge)](https://www.geeksforgeeks.org/bash-scripting-introduction-to-bash-and-bash-scripting/)
 
 ## Getting Started
 
