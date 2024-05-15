@@ -41,7 +41,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#deployment">Deployment</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#setup--run">Setup and run</a></li>
       </ul>
