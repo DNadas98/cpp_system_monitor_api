@@ -12,6 +12,7 @@ std::string getDBConnectionString();
 int main(void) {
   dotenv::env.load_dotenv("../.env.dev", true /* silent */, true /* overwrite */);
 
+  crow::logger::setLogLevel(crow::LogLevel::DEBUG);
   crow::SimpleApp app;
   int PORT = getPort();
 
