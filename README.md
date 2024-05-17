@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://github.com/DNadas98/crow_api/releases/tag/v0.0.1">
-    <img src="https://img.shields.io/github/v/release/DNadas98/crow_api.svg?style=for-the-badge" alt="Releases">
+  <a href="https://github.com/DNadas98/cpp_system_monitoring_api/releases/tag/v0.0.1">
+    <img src="https://img.shields.io/github/v/release/DNadas98/cpp_system_monitoring_api.svg?style=for-the-badge" alt="Releases">
   </a>
-  <a href="https://github.com/DNadas98/crow_api/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/DNadas98/crow_api.svg?style=for-the-badge" alt="Contributors">
+  <a href="https://github.com/DNadas98/cpp_system_monitoring_api/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/DNadas98/cpp_system_monitoring_api.svg?style=for-the-badge" alt="Contributors">
   </a>
-  <a href="https://github.com/DNadas98/crow_api/issues">
-    <img src="https://img.shields.io/github/issues/DNadas98/crow_api.svg?style=for-the-badge" alt="Issues">
+  <a href="https://github.com/DNadas98/cpp_system_monitoring_api/issues">
+    <img src="https://img.shields.io/github/issues/DNadas98/cpp_system_monitoring_api.svg?style=for-the-badge" alt="Issues">
   </a>
   <a href="https://linkedin.com/in/daniel-nadas">
     <img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555" alt="LinkedIn">
@@ -15,7 +15,7 @@
 
 <br xmlns="http://www.w3.org/1999/html"/>
 <div align="center">
-  <a href="https://github.com/DNadas98/crow_api">
+  <a href="https://github.com/DNadas98/cpp_system_monitoring_api">
     <img src="https://avatars.githubusercontent.com/u/125133206?v=4" alt="Logo" width="80" height="80">
   </a>
 
@@ -23,9 +23,9 @@
   <p align="center">
     Created by <a href="https://github.com/DNadas98">DNadas98 (Dániel Nádas)</a>
     <br />
-    <a href="https://github.com/DNadas98/crow_api/issues">Report Bug</a>
+    <a href="https://github.com/DNadas98/cpp_system_monitoring_api/issues">Report Bug</a>
     ·
-    <a href="https://github.com/DNadas98/crow_api/issues">Request Feature</a>
+    <a href="https://github.com/DNadas98/cpp_system_monitoring_api/issues">Request Feature</a>
   </p>
 </div>
 
@@ -125,7 +125,7 @@ This is a learning project, a simple API built to experiment with the C++ langua
 
 - Install the package
   ```bash
-  sudo dpkg -i crow_api.deb
+  sudo dpkg -i cpp_system_monitoring_api.deb
   sudo apt-get install -f
   ```
 - Source the environment variables
@@ -134,7 +134,7 @@ This is a learning project, a simple API built to experiment with the C++ langua
   ```
 - Run the project
   ```bash
-  /usr/local/bin/start_crow_api.sh
+  /usr/local/bin/start_cpp_system_monitoring_api.sh
   ```
 
 ###### API with CMake
@@ -165,12 +165,12 @@ This is a learning project, a simple API built to experiment with the C++ langua
   ```
 - Run the project
   ```bash
-  ./crow_api
+  ./cpp_system_monitoring_api
   ```
 
 ## Usage
 
-To use the API, import the provided `crow_api.postman_collection.json` to Postman.
+To use the API, import the provided `cpp_system_monitoring_api.postman_collection.json` to Postman.
 Current endpoints:
 - GET `/` - Simple hello world message
 - GET `/records` - Get all saved system monitoring records
@@ -198,7 +198,7 @@ Example system monitoring record:
 
 ## Roadmap
 
-- See the [open issues](https://github.com/DNadas98/crow_api/issues) for a
+- See the [open issues](https://github.com/DNadas98/cpp_system_monitoring_api/issues) for a
   full list of proposed features (and known issues).
 
 ## Contact
@@ -211,4 +211,4 @@ Dániel Nádas
 - LinkedIn: [Dániel Nádas](https://www.linkedin.com/in/daniel-nadas)
 
 Project
-Link: [https://github.com/DNadas98/crow_api](https://github.com/DNadas98/crow_api)
+Link: [https://github.com/DNadas98/cpp_system_monitoring_api](https://github.com/DNadas98/cpp_system_monitoring_api)
